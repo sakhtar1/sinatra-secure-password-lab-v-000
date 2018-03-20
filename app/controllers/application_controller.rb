@@ -16,9 +16,8 @@ class ApplicationController < Sinatra::Base
     erb :signup
   end
 
-  post "/signup" do
-    
-    if !!params[:username] || !!params[:password]
+  post "/signup" do  
+    if !!params[:username] && !!params[:password]
      redirect '/failure'
     else
      User.create(username: params[:username], password: params[:password])
