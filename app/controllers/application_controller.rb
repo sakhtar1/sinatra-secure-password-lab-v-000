@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
     else
       !params[:username] || !params[:password]
       redirect '/failure'
-     
+
     end
 
   end
